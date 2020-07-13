@@ -1,4 +1,4 @@
-# Snapchat Clone
+# snapchat-clone
 
 Snapchat clone built with React and SASS.
 
