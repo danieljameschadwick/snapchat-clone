@@ -94,9 +94,9 @@ const Camera = ({ cameraMode }) => {
                     buttonClass="btn-capture"
                     testId="btn-capture-main"
                     onclick={() => {
-                    if (notSupported) return;
-                    setTakePic(true);
-                    if (audioElem.current) playSound('cameraShutter', audioElem.current);
+                        if (notSupported) return;
+                        setTakePic(true);
+                        if (audioElem.current) playSound('cameraShutter', audioElem.current);
                     }}
                 />
             </section>

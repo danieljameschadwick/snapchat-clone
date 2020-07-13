@@ -2,9 +2,9 @@
     filter: drop-shadow(1px 1px $thickness $color);
 }
 
-@mixin highlight($width, $height, $thickness: 15px) {
-    box-shadow: 0 0 $thickness $color-red;
-    border: 1px solid rgba($color-red, 0.5);
+@mixin highlight($width, $height, $color: $color-black, $thickness: 15px) {
+    box-shadow: 0 0 $thickness $color;
+    border: 1px solid rgba($color, 0.5);
     border-radius: 100%;
     width: $width;
     height: $height;

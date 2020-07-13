@@ -58,7 +58,8 @@ const PhotoCapture = ({ takePic, closePic, videoElem, pickPhoto }) => {
                     <Button icon="faTimes" onclick={closePic} testId="btn-close" />
                 </header>
                 <canvas ref={canvasElem}></canvas>
-                <aside>
+                {/* todo: enable buttons */}
+                {/* <aside>
                     <Button icon="faTextHeight" />
                     <Button icon="faPen" />
                     <Button icon="faStickyNote" />
@@ -66,7 +67,7 @@ const PhotoCapture = ({ takePic, closePic, videoElem, pickPhoto }) => {
                     <Button icon="faPaperclip" />
                     <Button icon="faCropAlt" />
                     <Button icon="faStopwatch" />
-                </aside>
+                </aside> */}
                 <footer>
                     <div className="left">
                         <Button
@@ -78,7 +79,8 @@ const PhotoCapture = ({ takePic, closePic, videoElem, pickPhoto }) => {
                         <Button icon="faExternalLinkAlt" label="Story" />
                     </div>
                     <div className="right">
-                        <Button icon="faPlayCircle" label="Send To" />
+                        {/* todo: enable buttons */}
+                        {/* <Button icon="faPlayCircle" label="Send To" /> */}
                     </div>
                 </footer>
             </div>
