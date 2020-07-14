@@ -15,7 +15,6 @@ const Camera = () => {
 
     const [takePic, setTakePic] = useState(false);
     const [notSupported, setNotSupported] = useState(false);
-    const [cameraStream, setCameraStream] = useState(null);
     const [cameraMode, setCameraMode] = useState();
 
     const startCamera = useCallback(async () => {
@@ -46,7 +45,6 @@ const Camera = () => {
     
         if (!error && videoElem.current) {
             videoElem.current.srcObject = response;
-            setCameraStream(response);
         } else {
             setNotSupported(true);
         }
@@ -90,7 +88,6 @@ const Camera = () => {
                 takePic={takePic}
                 closePic={() => setTakePic(false)}
                 videoElem={videoElem.current}
-                pickPhoto={pickPhoto}
             />
 
             <section className="controls">
