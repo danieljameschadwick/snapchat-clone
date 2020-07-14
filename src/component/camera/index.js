@@ -62,10 +62,7 @@ const Camera = () => {
     const pickPhoto = (dataURL) => (dispatch) =>
         dispatch({ type: SET_PHOTO, dataURL });
 
-    const toggleCameraMode = () => (dispatch) => {
-        console.log(cameraMode);
-        console.log(cameraMode === 'user' ? 'environment' : 'user');
-
+    const toggleCameraMode = () => {
         setCameraMode(cameraMode === 'user' ? 'environment' : 'user');
     };
 
