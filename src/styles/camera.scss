@@ -47,27 +47,6 @@
         }
     }
 
-    .open-mouth {
-        position: absolute;
-        top: 135px;
-        right: 5%;
-        color: $color-white;
-        font-size: 20px;
-        text-align: center;
-        transform: rotate(10deg);
-        z-index: 1;
-        background: rgba($color-black, 0.2);
-        padding: 10px 35px 5px;
-        border-radius: 50px;
-        box-shadow: 0 0 1px $color-black;
-
-        strong {
-            display: block;
-            font-style: italic;
-            text-shadow: 0 0 2px $color-black;
-        }
-    }
-
     .controls {
         @extend %app-width;
 
@@ -93,7 +72,7 @@
             border-radius: 100%;
 
             .icon {
-            font-size: 70px;
+                font-size: 70px;
             }
         }
 
@@ -116,22 +95,6 @@
 
                 img {
                     width: 30px;
-                }
-
-                &.filter-dog {
-                    background: $color-pastel-pink;
-                }
-                &.filter-halloween {
-                    background: $color-pastel-blue;
-                }
-                &.filter-deform {
-                    background: $color-pastel-green;
-                }
-                &.filter-bees {
-                    background: $color-pastel-yellow;
-                }
-                &.filter-liberty {
-                    background: $color-pastel-blue;
                 }
 
                 // Center button

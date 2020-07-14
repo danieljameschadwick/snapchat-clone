@@ -1,0 +1,19 @@
+@import 'vars';
+@import 'extendables';
+
+.header {
+    .right {
+        z-index: 100;
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        right: 0;
+
+        .icon {
+            font-size: 23px;
+        }
+    }
+}

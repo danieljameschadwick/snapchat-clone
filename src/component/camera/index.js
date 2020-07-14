@@ -3,19 +3,23 @@ import { promise } from '../../includes/system';
 import { playSound } from '../../includes/audio';
 import Button from '../../common/button';
 import classNames from 'classnames';
+
+import Header from '../header/index.js';
 import PhotoCapture from './capture/index';
 
 import '../../styles/camera.scss';
 
 const SET_PHOTO = 'camera/setPhoto';
+const TOGGLE_CAMERA_MODE = 'camera/toggleCameraMode';
 
-const Camera = ({ cameraMode }) => {
+const Camera = () => {
     const videoElem = useRef(null);
     const audioElem = useRef(null);
 
     const [takePic, setTakePic] = useState(false);
     const [notSupported, setNotSupported] = useState(false);
-
+    const [cameraStream, setCameraStream] = useState(null);
+    const [cameraMode, setCameraMode] = useState();
 
     const startCamera = useCallback(async () => {
         const navigator = window.navigator;
@@ -29,7 +33,7 @@ const Camera = ({ cameraMode }) => {
                 return Promise.reject(new Error('getUserMedia() is not implemented!'));
             else
                 return new Promise((resolve, reject) =>
-                getUserMedia.call(navigator, constraints, resolve, reject)
+                    getUserMedia.call(navigator, constraints, resolve, reject)
                 );
             };
         }
@@ -45,6 +49,7 @@ const Camera = ({ cameraMode }) => {
     
         if (!error && videoElem.current) {
             videoElem.current.srcObject = response;
+            setCameraStream(response);
         } else {
             setNotSupported(true);
         }
@@ -57,18 +62,27 @@ const Camera = ({ cameraMode }) => {
     const pickPhoto = (dataURL) => (dispatch) =>
         dispatch({ type: SET_PHOTO, dataURL });
 
+    const toggleCameraMode = () => (dispatch) => {
+        console.log(cameraMode);
+        console.log(cameraMode === 'user' ? 'environment' : 'user');
+
+        setCameraMode(cameraMode === 'user' ? 'environment' : 'user');
+    };
+
     return (
         <main className="camera">
+            <Header toggleCameraMode={toggleCameraMode} />
+
             {notSupported && (
-            <div className="not-supported">
-                <p>
-                <span role="img" aria-label="crying emoji">
-                    😭
-                </span>{' '}
-                Unfortunately your browser doesn't support the getUserMedia API used by the
-                camera, please try another browser!
-                </p>
-            </div>
+                <div className="not-supported">
+                    <p>
+                    <span role="img" aria-label="crying emoji">
+                        😭
+                    </span>{' '}
+                    Unfortunately your browser doesn't support the getUserMedia API used by the
+                    camera, please try another browser!
+                    </p>
+                </div>
             )}
 
             <video

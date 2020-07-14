@@ -11,6 +11,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "classnames": "^2.2.6",
+    "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -20,12 +21,18 @@
     "react-scripts": "^3.4.1",
     "run-script-os": "^1.1.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx-source": "^6.22.0",
+    "babel-preset-expo": "^8.2.3"
+  },
   "scripts": {
     "start": "run-os",
     "start:default": "HTTPS=true PUBLIC_URL=/ react-scripts start",
     "build": "react-scripts build",
-    "test": "run-script-os"
+    "test": "run-script-os",
+    "gulp": "gulp"
   },
   "author": "",
   "license": "ISC",
