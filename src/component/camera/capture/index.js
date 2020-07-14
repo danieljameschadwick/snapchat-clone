@@ -6,7 +6,7 @@ import Button from '../../../common/button';
 
 import '../../../styles/photoCapture.scss';
 
-const PhotoCapture = ({ takePic, closePic, videoElem, pickPhoto }) => {
+const PhotoCapture = ({ takePic, closePic, videoElem }) => {
     const canvasElem = useRef(null);
 
     useEffect(() => {
@@ -29,9 +29,8 @@ const PhotoCapture = ({ takePic, closePic, videoElem, pickPhoto }) => {
         
         if (takePic) {
             takePhoto();
-            pickPhoto(getDataURL());
         }
-    }, [takePic, videoElem, pickPhoto]);
+    }, [takePic, videoElem]);
 
     const downloadPhoto = () => {
         const dataURL = getDataURL();

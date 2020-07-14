@@ -9,9 +9,6 @@ import PhotoCapture from './capture/index';
 
 import '../../styles/camera.scss';
 
-const SET_PHOTO = 'camera/setPhoto';
-const TOGGLE_CAMERA_MODE = 'camera/toggleCameraMode';
-
 const Camera = () => {
     const videoElem = useRef(null);
     const audioElem = useRef(null);
@@ -58,9 +55,6 @@ const Camera = () => {
     useEffect(() => {
         startCamera();
     }, [startCamera]);
-
-    const pickPhoto = (dataURL) => (dispatch) =>
-        dispatch({ type: SET_PHOTO, dataURL });
 
     const toggleCameraMode = () => {
         setCameraMode(cameraMode === 'user' ? 'environment' : 'user');
