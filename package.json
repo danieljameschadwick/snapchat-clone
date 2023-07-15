@@ -22,10 +22,10 @@
     "run-script-os": "^1.1.1"
   },
   "devDependencies": {
-    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-module-resolver": "^5.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx-source": "^6.22.0",
-    "babel-preset-expo": "^8.2.3"
+    "babel-preset-expo": "^9.5.0"
   },
   "scripts": {
     "start": "run-os",
